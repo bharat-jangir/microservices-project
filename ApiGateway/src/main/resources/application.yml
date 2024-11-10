@@ -64,10 +64,10 @@ eureka:
 
 okta:
   oauth2:
-    issuer: https://dev-50858365.okta.com/oauth2/default
+    issuer: https://dev-50855.okta.com/oauth2/default #set your application issuer
     audience: api://default
-    client-id: 0oakzzndbpoJsaVjm5d7
-    client-secret: cJuZR2zImKzLPqApEbdqTE_e8Pzmx4AG_RfpHSQEh2zrKpnR_WMxBy9v_HRo5IhK
+    client-id: 0oakzzndbpoJsaVjm7 #enter your client-id
+    client-secret: cJuZR2zImKzLPqApEbdqTE_e8Pzmx4AG_RfpHSQEh2zrKpnR_WMxBy9v_HR #enter your client-secret
     scopes: openid,profile,email,offline_access
 
 # spring:
