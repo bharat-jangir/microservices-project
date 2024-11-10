@@ -1,0 +1,79 @@
+server:
+  port: 8084
+
+
+# spring:
+#   cloud:
+#     gateway:
+#       routes:
+#         - id: USERSERVICE
+#           uri: http://localhost:8081/
+#           Predicates:
+#             - Path=/users/**
+#         - id: HOTELSERVICE
+#           uri: http://localhost:8082/
+#           Predicates:
+#             - Path=/hotels/**
+#         - id: RATINGSERVICE
+#           uri: http://localhost:8083/
+#           Predicates:
+#             - Path=/ratings/**
+#   application:
+#    name: API-GATEWAY
+
+   
+#   cloud:
+#    gateway:
+#       routes:
+#          - id: USERSERVICE
+#            uri: lb://USERSERVICE
+#            predicates:
+#             - Path=/users/**
+
+#          - id: HOTELSERVICE
+#            uri: lb://HOTELSERVICE
+#            predicates:
+#             - Path=/hotels/**
+    
+#          - id: RATINGSERVICE
+#            uri: lb://RATINGSERVICE
+#            predicates:
+#             - Path=/ratings/**
+#       discovery:
+#          locator:
+#             enabled: true
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.cloud.netflix.eureka: DEBUG
+
+
+
+eureka:
+   instance:
+      perefer-ip-address: true
+   client:
+      fetch-registry: true
+      register-with-eureka: true
+      service-url:
+         defaultZone: http://localhost:8761/eureka
+
+
+# okta configuration for api gateway 
+
+okta:
+  oauth2:
+    issuer: https://dev-50858365.okta.com/oauth2/default
+    audience: api://default
+    client-id: 0oakzzndbpoJsaVjm5d7
+    client-secret: cJuZR2zImKzLPqApEbdqTE_e8Pzmx4AG_RfpHSQEh2zrKpnR_WMxBy9v_HRo5IhK
+    scopes: openid,profile,email,offline_access
+
+# spring:
+#   security:
+#     oauth2:
+#       client:
+#         provider:
+#           okta:
+#             authorization-uri: http://localhost:8080/okta-custom-login

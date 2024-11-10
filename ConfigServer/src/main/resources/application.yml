@@ -1,0 +1,15 @@
+server:
+  port: 8085
+
+
+spring:
+  application:
+    name: CONFIGSERVER
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/bharat-jangir/microservice-tut-configserver
+          clone-on-start: true
+
+    
